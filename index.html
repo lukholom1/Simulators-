@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MF927U4 firmware: download and verify</title>
+  <meta name="description" content="Carrier firmware builds for the ZTE MF927U4 hotspot, with SHA-256 checksums and flashing steps.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231D3FD6'/%3E%3Cpath d='M7 24V8h4l5 9 5-9h4v16h-4V15l-5 9-5-9v9z' fill='%23fff'/%3E%3C/svg%3E">
+  <link rel="preload" href="/fonts/archivo-wdth.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="wrap">
+    <header class="topbar">
+      <strong>Unofficial firmware portal</strong>
+      <nav aria-label="Sections">
+        <a href="#builds">Builds</a>
+        <a href="#flash">Flashing steps</a>
+        <a href="#verify">Check a file</a>
+        <a href="#tools">Windows tools</a>
+      </nav>
+    </header>
+
+    <h1 class="model">MF927U4</h1>
+    <p class="lede">Firmware for the ZTE MF927U4 hotspot. Pick the build that matches your carrier, download it, and check the file before you flash.</p>
+
+    <main>
+      <section id="builds" class="split" aria-labelledby="builds-h">
+        <div>
+          <h2 id="builds-h">Choose your build</h2>
+          <div id="build-list" class="build-list" aria-live="polite">
+            <p class="muted">Loading builds…</p>
+          </div>
+        </div>
+        <aside id="detail" class="detail" aria-live="polite" aria-label="Selected build"></aside>
+      </section>
+
+      <section id="flash" class="two-col" aria-labelledby="flash-h">
+        <div>
+          <h2 id="flash-h">Before you flash</h2>
+          <ul class="checks">
+            <li>Read the help file that comes with the update tool.</li>
+            <li>Remove the SIM card and back up your personal information.</li>
+            <li>Install the USB drivers first, then choose the right software version.</li>
+            <li>Don't plug in or remove any USB device until the update finishes.</li>
+          </ul>
+          <p class="muted">These four points come from the update tool's own start screen.</p>
+        </div>
+        <div>
+          <h2>How to flash</h2>
+          <ol class="steps">
+            <li><span>Install the USB drivers on a Windows PC.</span></li>
+            <li><span>Download your build and unzip the update tool. Keep the <code>.bin</code> file in a folder of its own.</span></li>
+            <li><span>Start the update tool. Under Software Version, select the folder that holds the <code>.bin</code>.</span></li>
+            <li><span>Connect the hotspot over USB. The tool lists it on a line and shows "Device is ready."</span></li>
+            <li><span>Set the update option to Download, right-click the device, and choose Start Update.</span></li>
+            <li><span>Wait for "Update successfully!" before you unplug anything. If you see "Update fail!", run the update again.</span></li>
+          </ol>
+          <p class="muted">The tool also has NV backup and NV restore modes. Run a backup before you update if you want to be able to restore the device's NV data.</p>
+        </div>
+      </section>
+
+      <section id="verify" aria-labelledby="verify-h">
+        <h2 id="verify-h">Check a file</h2>
+        <p class="section-lede">Drop a downloaded <code>.bin</code> file here. Your browser works out its SHA-256 on your own computer, and the file is never uploaded.</p>
+        <label id="drop" class="drop">
+          <input id="file" type="file" accept=".bin,application/octet-stream">
+          <span class="drop-title">Choose a file or drop it here</span>
+          <span class="drop-hint">Files up to 300 MB</span>
+        </label>
+        <div id="result" class="result" role="status" hidden></div>
+      </section>
+
+      <section id="tools" aria-labelledby="tools-h">
+        <h2 id="tools-h">Windows tools</h2>
+        <div id="tool-list" class="tool-list"></div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>This is an unofficial portal. ZTE and MF927U4 belong to ZTE Corporation, which owns the firmware and tools listed here. Flash at your own risk. For official help, go to support.zte.com.cn.</p>
+    </footer>
+  </div>
+  <noscript><p class="wrap">This page needs JavaScript to list builds and check files.</p></noscript>
+  <script src="/app.js" type="module"></script>
+</body>
+</html>
